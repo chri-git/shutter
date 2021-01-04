@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>RaspberryPi Shutter Sample</title>
+</head>
+<body>
+	<button type="button" onclick="shutter_up()">Up</button>
+	<br />
+	<button type="button" onclick="shutter_down()">Down</button>
+
+	<script>
+		function shutter_up() {
+			var xmlHttp = new XMLHttpRequest();
+			xmlHttp.open("GET", "http://localhost:8080/shutter/up", true); // true for asynchronous 
+			xmlHttp.send(null);
+		}
+		function shutter_down() {
+			var xmlHttp = new XMLHttpRequest();
+			xmlHttp.open("GET", "http://localhost:8080/shutter/down", true); // true for asynchronous 
+			xmlHttp.send(null);
+		}
+	</script>
+</body>
